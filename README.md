@@ -6,7 +6,9 @@ Aplicacao simples, desenvolvida em PHP, no framework Laravel 8.0. A tabela foi m
 
 ## Como Utilizar a Ferramenta
 
-Basta levantar o servidor local do laravel por meio do comando <strong>php artisan serve</strong>
+Pre-requisitos: no minimo <a href="https://www.php.net/manual/pt_BR/install.php">PHP 7.0</>
+
+Iniciar o servidor pelo terminal por meio do comando <strong>php artisan serve</strong>, e depois acessar a URL da aplicacao (localhost:8000/acoesBaratas) no navegador.
 
 ## About Laravel
 
