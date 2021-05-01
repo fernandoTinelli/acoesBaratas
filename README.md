@@ -2,7 +2,7 @@
 
 ## Aplicaçao Acoes Baratas
 
-Aplicacao simples, desenvolvida em PHP, no framework Laravel 8.0. A tabela foi montada seguindo instrucoes obtidas nas aulas gratuitas do <a href="https://clubedovalor.com.br/">clube do valor</a>
+Aplicacao simples, desenvolvida em PHP, no framework Laravel 8.0. A tabela foi montada seguindo instrucoes obtidas nas aulas gratuitas do <a href="https://clubedovalor.com.br/">Clube do Valor</a>
 
 ## Como Utilizar a Ferramenta
 
