@@ -50,8 +50,9 @@
   window.onload = () => {
     form.onsubmit = () => {
       if (document.querySelector('#file').value === '') {
-        let modal = new bootstrap.Modal(document.getElementById('modal'), {});
-        modal.show();
+        new bootstrap
+          .Modal(document.getElementById('modal'), {})
+          .show();
 
         return false;
       }

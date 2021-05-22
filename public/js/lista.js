@@ -1,6 +1,8 @@
 const bolIsSessioStorageDisponivel = isLocalStorageDisponivel();
 const searchWrapper = document.querySelector(".search-input");
 const suggBox       = searchWrapper.querySelector(".autocom-box");
+const numMinListar  = 10;
+const numMaxListar  = 20;
 
 /* Inicializa a pagina */
 window.onload = () => {
@@ -9,12 +11,12 @@ window.onload = () => {
 
   criaTabela(pagina);
 
-  /* Muda a visualçao */
+  /* Muda a visualizaçao */
   nbrListar.onchange = () => {
-    if (nbrListar.value > 20) {
-      nbrListar.value = 20;
-    } else if (nbrListar.value < 10) {
-      nbrListar.value = 10;
+    if (nbrListar.value > numMaxListar) {
+      nbrListar.value = numMaxListar;
+    } else if (nbrListar.value < numMinListar) {
+      nbrListar.value = numMinListar;
     }
 
     pagina = 1;
