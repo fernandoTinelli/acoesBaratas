@@ -16,11 +16,13 @@ class AcoesBaratasController extends Controller
   public static int $MIN_LIQUIDEZ_ACAO = 200000;
 
   private static array $ARR_ACOES_RECUSADAS = array(
-    'SULA3', 'SULA4', 'SULA11', 'PSSA3', 'BOBR4', 'POSI3', 'RAPT4', 'TIET11', 'AESB3',
-    'CYRE3', 'HAGA4', 'AZEV3', 'AZEV4', 'CEBR3', 'CEBR6', 'DMMO3', 'MWET4', 
+    'SULA3', 'SULA4', 'SULA11', 'PSSA3',  'BOBR4', 'POSI3',
+    'RAPT3', 'RAPT4', 'FHER3',  'TIET11', 'AESB3', 'CYRE3',
+    'HAGA4', 'AZEV3', 'AZEV4',  'CEBR3',  'CEBR6', 'MWET4',
+    'B3SA3', 'ALLD3', 'ETER3',  'RSUL4', 'HAGA3', 'RAIZ4',
   );
 
-  private static array $ARR_ACOES_NUM_CODIGO_INVALIDOS = array (
+  private static array $ARR_ACOES_NUM_CODIGO_RECUSADAS = array (
     '33',
   );
 
@@ -52,7 +54,7 @@ class AcoesBaratasController extends Controller
                   !$this->isAcaoNumCodigoRecusada($linhaTabela[self::$TABELA_ACAO_POS_CODIGO_ACAO]) && 
                   !$this->isAcaoRecusada($linhaTabela[self::$TABELA_ACAO_POS_CODIGO_ACAO])) {
                     
-              if (substr($prevAcao, 0, 3) == substr($linhaTabela[self::$TABELA_ACAO_POS_CODIGO_ACAO], 0, 3)) {
+              if (substr($prevAcao, 0, 4) == substr($linhaTabela[self::$TABELA_ACAO_POS_CODIGO_ACAO], 0, 4)) {
                 
                 if ($linhaTabela[self::$TABELA_ACAO_POS_LIQUIDEZ] > $prevLiq) {
                   
@@ -67,6 +69,7 @@ class AcoesBaratasController extends Controller
                   $prevAcao = $linhaTabela[self::$TABELA_ACAO_POS_CODIGO_ACAO];
                   $prevLiq  = $linhaTabela[self::$TABELA_ACAO_POS_LIQUIDEZ];
                 }
+                
               } else {
                 $arrAcoes[] = array(
                   $linhaTabela[self::$TABELA_ACAO_POS_CODIGO_ACAO], 
@@ -107,7 +110,7 @@ class AcoesBaratasController extends Controller
   }
 
   private function isAcaoNumCodigoRecusada(string $strCodigoAcao) {
-    return in_array(substr($strCodigoAcao, 4, 2), self::$ARR_ACOES_NUM_CODIGO_INVALIDOS);
+    return in_array(substr($strCodigoAcao, 4, 2), self::$ARR_ACOES_NUM_CODIGO_RECUSADAS);
   }
 
   private function formatarDin(string $strValor) {

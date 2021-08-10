@@ -23,7 +23,7 @@
           <label for="file">Selecione a planilha de acoes:</label>    
           <input type="file" id="file" name="file" class="form-control">
         </div>
-        <button type="submit" class="btn btn-primary">Enviar</button>
+        <button type="submit" class="btn btn-primary">Processar Planilha</button>
       </form>     
 
       <div class="modal" tabindex="-1" id="modal">
